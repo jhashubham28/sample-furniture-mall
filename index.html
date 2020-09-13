@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Furniture Mall</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/simpleCart.min.js"> </script>
+<script src="js/index.js"> </script>
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!--//webfont-->
+<script src="js/jquery.easydropdown.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<script>
+			$(document).ready(function() {
+				$('.popup-with-zoom-anim').magnificPopup({
+					type: 'inline',
+					fixedContentPos: false,
+					fixedBgPos: true,
+					overflowY: 'auto',
+					closeBtnInside: true,
+					preloader: false,
+					midClick: true,
+					removalDelay: 300,
+					mainClass: 'my-mfp-zoom-in'
+			});
+		});
+		</script>
+</head>
+<body onload="Checking()">
+
+	<ul id ="navbar">
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="#news">News</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#about">About</a></li>
+	  </ul>
+
+
+	<div class="main">
+	  <div class="content_box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="menu_box">
+				   	  	<h3 class="menu_head">Menu</h3>
+				   	     <ul class="nav">
+					   	  	<li><a href="about.html">About</a></li>
+					   	  	<li><a href="about.html">Living Room</a></li>
+					   	  	<li><a href="about.html">Office Furniture</a></li>
+					   	  	<li><a href="about.html">Bean Bags</a></li>
+								 <li><a href="about.html">Tables</a></li>
+								 <script>
+									 
+								 function Checking() {
+									console.log("Checking");
+									$.ajax({  
+										url: 'http://localhost:3000/products',  
+									   
+										type: 'GET',  
+										
+										dataType: 'json',  
+										
+										success: function(response) {  
+											 
+											console.log(response); 						
+										
+											//DOM Manipulataion Starts
+										
+							
+											 document.getElementById("furniture").append(response[0].name);
+											 document.getElementById("price").append(response[0].price);
+											 document.getElementById("ratings").append(response[0].productRatings);
+											 
+											 document.getElementById("furniture1").append(response[1].name);
+											 document.getElementById("price1").append(response[1].price);
+											 document.getElementById("ratings1").append(response[1].productRatings);
+
+											 document.getElementById("furniture2").append(response[2].name);
+											 document.getElementById("price2").append(response[2].price);
+											 document.getElementById("ratings2").append(response[2].productRatings);
+
+											 document.getElementById("furniture3").append(response[3].name);
+											 document.getElementById("price3").append(response[3].price);
+											 document.getElementById("ratings3").append(response[3].productRatings);
+
+											 document.getElementById("furniture4").append(response[4].name);
+											 document.getElementById("price4").append(response[4].price);
+											 document.getElementById("ratings4").append(response[4].productRatings);
+
+											 document.getElementById("furniture5").append(response[5].name);
+											 document.getElementById("price5").append(response[5].price);
+											 document.getElementById("ratings5").append(response[5].productRatings);
+
+											 document.getElementById("furniture6").append(response[6].name);
+											 document.getElementById("price6").append(response[6].price);
+											 document.getElementById("ratings6").append(response[6].productRatings);
+
+											 document.getElementById("furniture7").append(response[7].name);
+											 document.getElementById("price7").append(response[7].price);
+											 document.getElementById("ratings7").append(response[7].productRatings);
+
+											 document.getElementById("furniture8").append(response[8].name);
+											 document.getElementById("price8").append(response[8].price);
+											 document.getElementById("ratings8").append(response[8].productRatings);
+											
+										},  
+										error: function(response) {  
+											console.log('Error in Database');  
+										   
+										}  
+									});  
+									}
+							</script>
+					   	  
+					   	 </ul>
+			   	    </div>     
+				  
+				     
+				</div>
+			   <div class="col-md-9">
+				<h3 class="m_1">Products</h3>
+				 <div class="content_grid">
+				   <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image" id="productImageUrl" onclick="productDetailsPage()">
+								<img src="images/pic1.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								 <div class="product_container">
+								   <div class="cart-left">
+									 <p class="title" id= "furniture"></p>
+									 <p class="title" id= "ratings">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price"></span>
+
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				    </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic2.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>		
+								<div class="product_container">
+								   <div class="cart-left">
+									<p class="title" id= "furniture1"></p>
+									<p class="title" id= "ratings1">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price1"></span>
+								   <div class="clearfix"></div>
+							     </div>		
+							</div>
+						</div>
+		                 </a>
+				    </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
+				  	      <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic3.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								<div class="product_container">
+								   <div class="cart-left">
+									<p class="title" id= "furniture2"></p>
+									<p class="title" id= "ratings2">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price2"></span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				   </div>
+				   <div class="clearfix"></div>
+			  </div>
+			  <div class="content_grid">
+				  <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic4.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								<div class="product_container">
+								   <div class="cart-left">
+									<p class="title" id= "furniture3"></p>
+									<p class="title" id= "ratings3">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price3"></span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				    </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	      <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic5.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								<div class="product_container">
+								   <div class="cart-left">
+									<p class="title" id= "furniture4"></p>
+									<p class="title" id= "ratings4">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price4"></span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+					</div>
+					<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+						<a href="single.html">
+						  <div class="inner_content clearfix">
+						   <div class="product_image">
+							   <img src="images/pic7.jpg" class="img-responsive" alt=""/>
+							   <a href="" class="button item_add item_1"> </a>		
+							   <div class="product_container">
+								  <div class="cart-left">
+									<p class="title" id= "furniture5"></p>
+									<p class="title" id= "ratings5">Ratings: </p>
+								  </div>
+								  <span class="amount item_price" id ="price5"></span>
+								  <div class="clearfix"></div>
+								</div>		
+							 </div>
+						   </div>
+						</a>
+				   </div>
+				   <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+					<a href="single.html">
+					  <div class="inner_content clearfix">
+					   <div class="product_image">
+						   <img src="images/pic10.jpg" class="img-responsive" alt=""/>
+						   <a href="" class="button item_add item_1"> </a>		
+						   <div class="product_container">
+							  <div class="cart-left">
+								<p class="title" id= "furniture6"></p>
+								<p class="title" id= "ratings6">Ratings: </p>
+							  </div>
+							  <span class="amount item_price" id ="price6"></span>
+							  <div class="clearfix"></div>
+							</div>		
+						 </div>
+					   </div>
+					</a>
+			   </div>
+				   <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+					<a href="single.html">
+					<div class="inner_content clearfix">
+					 <div class="product_image">
+						 <img src="images/pic8.jpg" class="img-responsive" alt=""/>
+						 <a href="" class="button item_add item_1"> </a>		
+						 <div class="product_container">
+							<div class="cart-left">
+								<p class="title" id= "furniture7"></p>
+								<p class="title" id= "ratings7">Ratings: </p>
+							</div>
+							<span class="amount item_price" id ="price7"></span>
+							<div class="clearfix"></div>
+						  </div>		
+					   </div>
+					 </div>
+				  </a>
+			 </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
+				  	      <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic6.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								<div class="product_container">
+								   <div class="cart-left">
+									<p class="title" id= "furniture8"></p>
+									<p class="title" id= "ratings8">Ratings: </p>
+								   </div>
+								   <span class="amount item_price" id ="price8"></span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				       </div>	 
+				   </div>
+			</div>
+
+			
+		 </div>
+		</div>
+		
+	   
+    </div>
+    </div>
+	</div>
+	
+</body>
+</html>		
